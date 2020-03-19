@@ -31,4 +31,4 @@ podman run --rm -dP centos-ssh
        -p 34505 root@127.0.0.1
    ```
 
-3. Use password as defined in `DOCKERFILE`,  *pw*
+3. Use password as defined in `DOCKERFILE`:  *pw*
