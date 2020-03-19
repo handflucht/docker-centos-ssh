@@ -14,7 +14,7 @@ podman build -t centos-ssh -f DOCKERFILE
 # Run
 
 ```bash
-podman run --rm -dP centos-ssh
+podman run --privileged --rm -dP -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos-ssh
 ```
 
 # Connect
