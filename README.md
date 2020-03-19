@@ -1,8 +1,8 @@
 
 # General
-A simple CentOS running an SSH-server.
+Dockerized CentOS running a SSH-server.
 
-You can use this container e.g. as an target for ansible.
+You can use this container e.g. as a target for ansible.
 
 # Build
 
@@ -32,3 +32,16 @@ podman run --privileged --rm -dP -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos-ssh
    ```
 
 3. Use password as defined in `DOCKERFILE`:  *pw*
+
+# Ansible
+
+If you want to process this container with ansible, add the following to the `inventory.txt`
+
+```ini
+[loc]
+dockercent ansible_host=127.0.0.1 ansible_ssh_user=root ansible_ssh_pass=pw ansible_port=34505
+```
+
+Now you can provide `dockercent` as host, e.g. to the `ansible-playbook`-command. 
+
+Also, you can start several containers, add them with a different name (e.g. `dockercent1`) and the new port and call the group `loc` to process all hosts.
