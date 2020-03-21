@@ -7,7 +7,7 @@ You can use this container e.g. as a target for ansible.
 # Build
 
 ```bash
-podman build -t centos-ssh -f DOCKERFILE
+podman build -t centos-ssh -f Dockerfile
 ```
 
 
